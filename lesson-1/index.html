@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Web Components | The video tag</title>
+    <style>
+      video {
+        width: 900px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Introducing the HTML &lt;video&gt; tag.</h1>
+    <p>With and since the introduction of HTML5 we actually already have some 'Web Components' in the form of some new HTML tags that are more complex than tags like the &lt;h1&gt; tag and other tags that have been around for many, many years.</p>
+    <p>The &lt;video&gt; tag looks simple like other HTML tags, but you will notice that it has a set of video controls. How can a simple HTML tag have complex features like that?</p>
+    <p>When you use the &lt;video&gt; tag the web browser knows the additional controls to add to make the tag look and work correctly. And there are actually other HTML elements 'hidden' within the &lt;video&gt; tag. This is one of 4 ideas that groups are trying to standardizeas part of the Web Components standards. This 'hidden' area of a Web Component is known as the "Shadow DOM" and is like the DOM representation of a web page, but just for a specific control like the &lt;video&gt; tag.</p>
+    <p>Now let's take a look at the &lt;video&gt; tag.</p>
+    <pre><code>
+        &lt;video src="./welcome.mov" type="video/mov" controls&gt;&lt;/video&gt;
+    </code></pre>
+    <video src="./welcome.mov" type="video/mov" controls></video>
+  </body>
+</html>
