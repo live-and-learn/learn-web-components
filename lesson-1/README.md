@@ -5,7 +5,7 @@ Welcome to learning Web Components.
 
 Explanation of Web Components
 
-Now go to this [web page](https://github.com/live-and-learn/learn-web-components/tree/master/lesson-1/video.html "Learning about the 'video' Web Component") (use Google Chrome) to see a native Web Component and learn more about Web Components by experimenting with them.
+Now go to this [web page](https://rawgit.com/live-and-learn/learn-web-components/master/lesson-1/video.html "Learning about the 'video' Web Component") (use Google Chrome) to see a native Web Component and learn more about Web Components by experimenting with them.
 
 Other Lessons in this Series
 * [Lesson 2: ...](https://github.com/live-and-learn/learn-web-components/tree/master/lesson-2 "Lesson 2 about ...") (about mm minutes)
