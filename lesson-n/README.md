@@ -1,6 +1,9 @@
 #Lesson *n* (about mm minutes)
 This will be the most complex lesson involving creating a custom Web Component and using it in a web application. For the web developers at my work this will mean using this lesson as a reference and doing the work in a project file repository.
 
+This also needs to include:
+Include details such as the ideas of AngularJS integration and global and specific services that communicate with each other. Be sure to update project documents with this information.
+
 <!-- Now go to this [web page](https://rawgit.com/live-and-learn/learn-web-components/master/lesson-1/video.html "Learning about the 'video' Web Component") (use Google Chrome) to see a native Web Component and learn more about Web Components by experimenting with them. -->
 
 ##Other Lessons in this Series
