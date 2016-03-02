@@ -1,14 +1,17 @@
 # learn-web-components
 
-Welcome to learning Web Components.
+Welcome to the Web Components course.
 
 This course is designed to quickly introduce you to Web Components and get you started using them.
 
-The course is very basic to start with and is organized in small sections. Feel free to skip any sections you don't think you'll need. The course instruction should take about <time_to_complete>. Feel free to take more time to practice if you would like.
+The course is very basic to start with and is organized in small sections. Feel free to skip any sections you don't think you'll need. The course instruction should take about 1 hour to complete. Feel free to take more time to practice if you would like.
 
-The lessons in this course are actually in this Git repository (a place where code lives). You will be reading and watching the instruction from that repository and completing tasks using it. Don't worry about breaking it for others. You don't have access to the Git repository that would allow this. Now would be a good time to clone a fork of this repository so that you can load the files into your code editor and experiment with making changes to the Web Components in the lessons.
+The lessons in this course are actually in this Git repository. You will be using the instruction from that repository and completing tasks in its files. Don't worry about breaking it for others. You don't have access to the Git repository that would allow this. Now would be a good time to clone a fork of this repository so that you can load the files into your code editor and experiment with making changes to the Web Components in the lessons.
 
-With that, let's get started learning about Web Components. [Click here to start the first lesson](https://github.com/live-and-learn/learn-web-components/tree/master/lesson-1 "Lesson 1 about Web Components and an introduction to native Web Components.").
+Once you have cloned a fork of this repository to your computer, open this file in your Chrome browser: /learn-web-components/lesson-1/readme.html
+
+It would be best to continue the remainder of the course using the files on your computer with your web browser and text editor.
+
 
 ##Complete List of Lessons
 * [Web Components Course Page](https://github.com/live-and-learn/learn-web-components "Course Page")
