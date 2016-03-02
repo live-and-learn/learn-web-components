@@ -6,11 +6,11 @@ This course is designed to quickly introduce you to Web Components and get you s
 
 The course is very basic to start with and is organized in small sections. Feel free to skip any sections you don't think you'll need. The course instruction should take about 1 hour to complete. Feel free to take more time to practice if you would like.
 
-The lessons in this course are actually in this Git repository. You will be using the instruction from that repository and completing tasks in its files. Don't worry about breaking it for others. You don't have access to the Git repository that would allow this. Now would be a good time to clone a fork of this repository so that you can load the files into your code editor and experiment with making changes to the Web Components in the lessons.
+You will be using the instruction from and completing tasks in the files in this repository.
+
+Now would be a good time to clone a fork of this repository so that you can load the files into your code editor and experiment with making changes to the Web Components in the lessons.
 
 Once you have cloned a fork of this repository to your computer, open this file in your Chrome browser: /learn-web-components/lesson-1/readme.html
-
-It would be best to continue the remainder of the course using the files on your computer with your web browser and text editor.
 
 
 ##Complete List of Lessons
