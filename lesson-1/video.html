@@ -1,39 +1,48 @@
 <html>
   <head>
-  <title>Web Components: Lesson 1</title>
+  <title>Web Components: Lesson 1 Exercises</title>
     <link href="../assets/css/styles.css" rel='stylesheet' media='screen'/>
   </head>
   <body>
-    <h1>Introducing the HTML &lt;video&gt; tag.</h1>
+    <h1>Web Components: Lesson 1 Exercises</h1>
+    <h2>Introducing the HTML &lt;video&gt; tag.</h2>
     <p>With and since the introduction of HTML5 we actually already have some 'Web Components' in the form of some new HTML tags that are more complex than tags like the &lt;h1&gt; tag and other tags that have been around for many, many years.</p>
-    <p>The &lt;video&gt; tag looks simple like other HTML tags, but you will notice that it has a set of video controls. How can a simple HTML tag have complex features like that?</p>
-    <p>When you use the &lt;video&gt; tag the web browser knows the additional controls to add to make the tag look and work correctly. And there are actually other HTML elements 'hidden' within the &lt;video&gt; tag. This is one of 4 ideas that groups are trying to standardizeas part of the Web Components standards. This 'hidden' area of a Web Component is known as the "Shadow DOM" and is like the DOM representation of a web page, but just for a specific control like the &lt;video&gt; tag.</p>
+    <p>The &lt;video&gt; tag looks simple like other HTML tags and yet is able to display a video file. If you right click on the video, there are some limited playback controls. With the addition of a simple attribute you can add a playback controls bar to the bottom of the video.</p>
+    <p>How can a simple HTML tag have complex features like that?</p>
+    <p>When you use the &lt;video&gt; tag the web browser 'knows' how to add to make the tag look and work like a video player. And there are actually other HTML elements 'hidden' within the &lt;video&gt; tag. This is one of 4 ideas that groups are trying to standardizeas part of the Web Components standards. This 'hidden' area of a Web Component is known as the "Shadow DOM" and is like the DOM representation of a web page, but just for a specific control like the &lt;video&gt; tag.</p>
 
-    <em>Consider making this the page that has all of the learning tasks for task class 1. Maybe each task class will be collapsed under its heading (except for the first one). The learner would then click to expand each learning task as they are ready to use it. This will make the page more complex, but this is intended to be such a basic set of learning tasks that it seems overkill to make a page for each one. Also, having all of learning tasks on the one page will allow the learner to continue experimenting on the &lt;video&gt; tag through each task.</em>
+    <!-- <em>Consider making this the page that has all of the learning tasks for task class 1. Maybe each task class will be collapsed under its heading (except for the first one). The learner would then click to expand each learning task as they are ready to use it. This will make the page more complex, but this is intended to be such a basic set of learning tasks that it seems overkill to make a page for each one. Also, having all of learning tasks on the one page will allow the learner to continue experimenting on the &lt;video&gt; tag through each task.</em> -->
 
-    <h2>Lesson 1</h2>
+    <h2>Exercise 1</h2>
     <p>Now let's take a look at the &lt;video&gt; tag. Open this file in Google Chrome. Notice the simplicity of the single &lt;video&gt; tag. Right now it looks like it is impossible to play the video because the playback controls are missing. You will add the controls in the next lesson. For now you can right click on the video and choose the option to show the controls.</p>
     <pre><code>
         &lt;video src="./welcome.mov" type="video/mov"&gt;&lt;/video&gt;
     </code></pre>
     <video src="./welcome.mov" type="video/mov"></video>
-    <h2>Lesson 2</h2>
+    <h2>Exercise 2</h2>
     <p>Now let's experiment with the &lt;video&gt; tag by adding the "controls" attribute to it. After you have added this attribute, refresh the page in you browser to see the change.</p>
-    <p>Here are some other attributes that you can experiment with on the&lt;video&gt; tag:</p>
+    <p>Here are the attributes that you can experiment with on the&lt;video&gt; tag:</p>
     <ul>
-      <li>lorem ipsum 1</li>
-      <li>lorem ipsum 2</li>
-      <li>lorem ipsum 3</li>
-      <li>lorem ipsum 4</li>
+      <li>autoplay</li>
+      <li>controls</li>
+      <li>height="" and width=""</li>
+      <li>loop</li>
+      <li>muted</li>
+      <li>poster="url"</li>
+      <li>preload="auto|metadata|none"</li>
+      <li>src="url"</li>
+      <li>Global and Event attributes</li>
     </ul>
-    <h2>Lesson 3</h2>
+    <p>There are also other tags or text that you can nest in the video tag.</p>
+    <ul>
+      <li>source as in <pre>&lt;source src="movie.mp4" type="video/mp4"&gt;</pre></li>
+      <li>plain text that will be displayed if the browser does not support the video tag <pre>Your browser does not support the video tag.</pre></li>
+    </ul>
+    <h2>Exercise 3</h2>
     <p>You may be wondering where the markup is for video controls and other attributes that you add or change. These are hidden in within the Web Component in an area known as the Shadow DOM. There will be more about this later.</p>
     <p>Now do a search on the Internet for some other native Web Components. Below are some places you can look.</p>
     <ul>
-      <li>lorem ipsum 1</li>
-      <li>lorem ipsum 2</li>
-      <li>lorem ipsum 3</li>
-      <li>lorem ipsum 4</li>
+      <li><a href="http://www.w3schools.com/html/html5_new_elements.asp">w3schools</a></li>
     </ul>
     <h2>Other Lessons</h2>
     <ul>
