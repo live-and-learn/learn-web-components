@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <title>Web Components</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <style>
+      body {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
+
+      .lesson-viewer {
+        border: none;
+        border-right: 1px solid #000;
+        flex-basis: 30%;
+        flex-grow: 1;
+        flex-shrink: 1;
+        padding: 20px 40px;
+      }
+
+      .exercise-window {
+        flex-basis: 70%;
+        flex-grow: 4;
+        flex-shrink: 4;
+      }
+
+      .exercise-window section {
+        display: block;
+      }
+
+      .code-results-viewer {
+        height: 70%;
+        margin: 20px 40px;
+      }
+
+      .code-results-viewer div * {
+        height: 98%;
+      }
+
+      .code-writer {
+        height: 30%;
+        opacity: 0.8;
+      }
+
+      .code-writer textarea {
+        border-left: none;
+        font-size: 18px;
+        height: 100%;
+        padding: 20px 40px;
+        width: 100%;
+      }
+
+      body .video-box {
+        background-color: #fff;
+        border: 1px solid #000;
+        bottom: 0;
+        height: 226px;
+        position: absolute;
+        right: 0;
+        width: 402px;
+      }
+
+      body .video-box video {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe class="lesson-viewer" src="lesson-1/index.html"></iframe>
+    <div class="exercise-window">
+      <section class="code-results-viewer">
+        <div></div>
+      </section>
+      <section class="code-writer">
+        <textarea placeholder="Coding Box"></textarea>
+      </section>
+    </div>
+    <div class="video-box" draggable="true" ondragend="drag(event)">
+      <video src="lesson-1/organize-web-site.mp4" type="video/mov" controls></video>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script>
+      var whichLesson = getUrlVars()["whichLesson"] || "lesson1";
+
+      $("iframe.lesson-viewer")[0].src = whichLesson + "/index.html";
+
+      // Read a page's GET URL variables and return them as an associative array.
+      function getUrlVars()
+      {
+          var vars = [], hash;
+          var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+          for(var i = 0; i < hashes.length; i++)
+          {
+              hash = hashes[i].split('=');
+              vars.push(hash[0]);
+              vars[hash[0]] = hash[1];
+          }
+          return vars;
+      }
+
+      function updateView(event) {
+        $('.exercise-window .code-results-viewer div').html($('.code-writer textarea').val());
+        console.log('changing');
+      }
+
+      $(function() {
+        $('body .video-box').draggable();
+      });
+
+      $('.code-writer textarea').on('input paste', function () {
+                                                     setTimeout(function () {
+                                                       updateView();
+                                                     }, 600);
+                                                   });
+    </script>
+  </body>
+</html>

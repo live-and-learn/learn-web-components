@@ -8,6 +8,13 @@ h2 {
   margin-top: 62px;
 }
 
+.lesson-time {
+  display: block;
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
+
 video {
     max-width: 700px;
 }
