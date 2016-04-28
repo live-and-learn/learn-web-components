@@ -4,6 +4,10 @@ body {
     margin: 24px auto;
 }
 
+h1 {
+  line-height: 34px;
+}
+
 h2 {
   margin-top: 62px;
 }
@@ -17,4 +21,47 @@ h2 {
 
 video {
     max-width: 700px;
+}
+
+.input-wrapper{
+  display: block;
+  margin: 12px 0;
+  white-space: nowrap;
+}
+
+.input-wrapper input{
+  border: 1px solid #444;
+  font-size: 14px;
+  height: 23px;
+  width: 88%;
+}
+
+.textarea-wrapper{
+  display: block;
+  margin: 12px 0;
+  white-space: nowrap;
+}
+
+.textarea-wrapper textarea{
+  border: 1px solid #444;
+  font-size: 14px;
+  height: 300px;
+  width: 88%;
+}
+
+.copy-button {
+  left: -5px;
+  position: relative;
+  top: 3px;
+}
+
+.textarea-wrapper .copy-button{
+  top: -3px;
+}
+
+.clippy {
+  margin-top: -3px;
+  position: relative;
+  top: 3px;
+  width: 18px;
 }

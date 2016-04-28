@@ -10,18 +10,37 @@
       }
 
       .lesson-viewer {
+        width: 100%;
+        height: 100%;
         border: none;
-        border-right: 1px solid #000;
+/*        border-right: 1px solid #000;
+        cursor: move;
         flex-basis: 30%;
         flex-grow: 1;
         flex-shrink: 1;
         padding: 20px 40px;
-      }
+        resize: both;
+*/      }
+
+        .ui-resizable-helper {
+          border: 1px dotted gray;
+        }
+        .resizable {
+          display: block;
+          width: 400px;
+          height: 94%;
+          padding: 30px;
+          border: 2px solid gray;
+          overflow: hidden;
+          position: relative;
+        }
+
 
       .exercise-window {
         flex-basis: 70%;
         flex-grow: 4;
         flex-shrink: 4;
+        width: 60%;
       }
 
       .exercise-window section {
@@ -35,6 +54,7 @@
 
       .code-results-viewer div * {
         height: 98%;
+        width: 100%;
       }
 
       .code-writer {
@@ -54,6 +74,7 @@
         background-color: #fff;
         border: 1px solid #000;
         bottom: 0;
+        cursor: move;
         height: 226px;
         position: absolute;
         right: 0;
@@ -67,13 +88,13 @@
     </style>
   </head>
   <body>
-    <iframe class="lesson-viewer" src="lesson-1/index.html"></iframe>
+    <div class="resizable"><iframe class="lesson-viewer" src="lesson-1/index.html"></iframe></div>
     <div class="exercise-window">
       <section class="code-results-viewer">
         <div></div>
       </section>
       <section class="code-writer">
-        <textarea placeholder="Coding Box"></textarea>
+        <textarea id="codingBox" placeholder="Coding Box"></textarea>
       </section>
     </div>
     <div class="video-box" draggable="true" ondragend="drag(event)">
@@ -81,8 +102,9 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script>
-      var whichLesson = getUrlVars()["whichLesson"] || "lesson1";
+      var whichLesson = getUrlVars()["whichLesson"] || "lesson-1";
 
       $("iframe.lesson-viewer")[0].src = whichLesson + "/index.html";
 
@@ -100,20 +122,61 @@
           return vars;
       }
 
-      function updateView(event) {
+      var updateView =  _.debounce(function(event) {
         $('.exercise-window .code-results-viewer div').html($('.code-writer textarea').val());
         console.log('changing');
-      }
+      }, 500); // Maximum run of once per 500 milliseconds
 
       $(function() {
         $('body .video-box').draggable();
       });
 
-      $('.code-writer textarea').on('input paste', function () {
-                                                     setTimeout(function () {
-                                                       updateView();
-                                                     }, 600);
-                                                   });
+      var codingBox = document.getElementById("codingBox");
+      if(codingBox.addEventListener ) {
+        codingBox.addEventListener('keydown',this.keyHandler,false);
+      } else if(codingBox.attachEvent ) {
+        codingBox.attachEvent('onkeydown',this.keyHandler); /* IE hack */
+      }
+
+      function keyHandler(event) {
+        var TABKEY = 9;
+        if (event.which === TABKEY && event.shiftKey) {
+          if(event.preventDefault) {
+              event.preventDefault();
+          }
+          return false;
+        }
+
+        if(event.keyCode == TABKEY) {
+          var valueLength = $('#codingBox').val().length;
+          var TAB_SIZE = "    ";
+          var tabLength = TAB_SIZE.length;
+          if (valueLength <= 0) {
+            this.value += TAB_SIZE;
+          }
+          else {
+            var cursorPosition = $('#codingBox').prop("selectionStart");
+            // console.log('cursorPosition ' , cursorPosition);
+            this.value = this.value.substring(0,cursorPosition) + TAB_SIZE + this.value.substring(cursorPosition, valueLength);
+            $('#codingBox').prop("selectionStart", cursorPosition + tabLength);
+            $('#codingBox').prop("selectionEnd", cursorPosition + tabLength);
+          }
+          if(event.preventDefault) {
+              event.preventDefault();
+          }
+          return false;
+        }
+      }
+
+      $('.code-writer textarea').on('input paste', updateView);
+
+      $(function () {
+        $(".resizable").resizable({
+          animate: true,
+          animateEasing: 'swing',
+          animateDuration: 500
+        });
+      });
     </script>
   </body>
 </html>
